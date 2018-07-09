@@ -270,11 +270,11 @@ public class NodeIndexer implements ServletContextListener, Runnable {
       }
       List<String> allHostNames = new ArrayList<>();
       List<String> verifiedHostNames = entry.getVerifiedHostNames();
-      if (null == verifiedHostNames) {
+      if (null != verifiedHostNames) {
         allHostNames.addAll(verifiedHostNames);
       }
       List<String> unverifiedHostNames = entry.getUnverifiedHostNames();
-      if (null == unverifiedHostNames) {
+      if (null != unverifiedHostNames) {
         allHostNames.addAll(unverifiedHostNames);
       }
       for (String hostName : allHostNames) {
