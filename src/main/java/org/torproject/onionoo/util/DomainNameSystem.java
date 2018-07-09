@@ -23,9 +23,10 @@ public class DomainNameSystem {
   private DirContext dnsContext;
   private Logger log;
 
+  /** Creates a new instance. */
   public DomainNameSystem() {
     log = LoggerFactory.getLogger(DomainNameSystem.class);
-    Hashtable<String, String> envProps = new Hashtable<String, String>();
+    Hashtable<String, String> envProps = new Hashtable<>();
     envProps.put(Context.INITIAL_CONTEXT_FACTORY,
         "com.sun.jndi.dns.DnsContextFactory");
     try {
