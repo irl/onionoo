@@ -63,9 +63,11 @@ class RdnsLookupRequest extends Thread {
             }
           }
           if (verified) {
-            verifiedResults.add(reverseDnsRecord);
+            verifiedResults.add(reverseDnsRecord.substring(0,
+                    reverseDnsRecord.length() - 1));
           } else {
-            unverifiedResults.add(reverseDnsRecord);
+            unverifiedResults.add(reverseDnsRecord.substring(0,
+                    reverseDnsRecord.length() - 1));
           }
         }
       }
