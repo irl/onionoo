@@ -1,0 +1,12 @@
+sudo: required
+
+language: java
+
+services:
+  - docker
+
+before_install:
+  - docker build -t tormetrics/onionoo .
+
+script:
+  - docker run tormetrics/onionoo /bin/sh -c "cd /root/onionoo; JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8 ant test"
